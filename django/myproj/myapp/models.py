@@ -1,7 +1,6 @@
 from django.db import models
 
 # Create your models here.
-
 class Publisher(models.Model):
 	name = models.CharField(max_length=30)
 	address = models.CharField(max_length=50)
@@ -10,14 +9,6 @@ class Publisher(models.Model):
 	country = models.CharField(max_length=50)
 	website = models.URLField()
 
-	def __str__(self):
-		return self.name
-
-	class Meta:
-		ordering = ["name"]
-
-	class Admin: pass
-
 class Author(models.Model):
 	salutation = models.CharField(max_length=10)
 	first_name = models.CharField(max_length=30)
@@ -25,18 +16,8 @@ class Author(models.Model):
 	email = models.EmailField()
 	headshot = models.ImageField(upload_to='/tmp')
 
-	def __str__(self):
-		return '%s %s' % (self.salutation, self.last_name)
-
-	class Admin: pass
-
 class Book(models.Model):
 	title = models.CharField(max_length=100)
 	authors = models.ManyToManyField(Author)
 	publisher = models.ForeignKey(Publisher)
 	publication_date = models.DateField()
-
-	def __str__(self):
-		return self.title
-
-	class Admin: pass

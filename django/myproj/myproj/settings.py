@@ -1,5 +1,5 @@
 """
-Django settings for hipython project.
+Django settings for myproj project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 't(79ar+y-8&8)njs$)okgcfzai&%@sg5_*my!=y&_^aw%wrq5o'
+SECRET_KEY = 'x=226_s)cqd*x)71-1h45otnh*(ge3*0w_%8eex+r&5m*t&bdr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,7 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'books',
+    'myapp', 'myapp',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -48,9 +48,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'hipython.urls'
+ROOT_URLCONF = 'myproj.urls'
 
-WSGI_APPLICATION = 'hipython.wsgi.application'
+WSGI_APPLICATION = 'myproj.wsgi.application'
 
 
 # Database
@@ -58,11 +58,8 @@ WSGI_APPLICATION = 'hipython.wsgi.application'
 
 DATABASES = {
     'default': {
-	'ENGINE': u'django.db.backends.postgresql_psycopg2', 
-	'HOST': u'127.0.0.1',
-	'NAME': u'py_dev',
-	'USER': u'py_dev',
-	'PASSWORD': u'py_dev',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -84,11 +81,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
-
-
-
-
-
-TEMPLATE_DIRS = (
-	os.path.join(os.path.dirname(__file__), 'templates').replace('\\', '/'),
-)
