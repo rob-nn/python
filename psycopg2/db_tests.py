@@ -1,18 +1,19 @@
 import psycopg2
 
-conn = psycopg2.connect("host=127.0.0.1 dbname=py_dev user=py_dev password=py_dev")
 
-cursor = conn.cursor()
+def run():
+	conn = psycopg2.connect("host=127.0.0.1 dbname=py_dev user=py_dev password=py_dev")
 
-cursor.execute('Create table test(id serial primary key, num integer, data varchar)');
+	cursor = conn.cursor()
 
-cursor.execute("INSERT INTO test (num, data) VALUES (%s, %s)",
-	(100, "abc'def")) 
+	cursor.execute('Create table test(id serial primary key, num integer, data varchar)');
 
-conn.commit()
+	cursor.execute("INSERT INTO test (num, data) VALUES (%s, %s)",
+		(100, "abc'def")) 
+
+	conn.commit()
 
 
-cursor.close()
+	cursor.close()
 
-conn.close()
-
+	conn.close()
