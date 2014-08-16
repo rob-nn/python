@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from django.shortcuts import render_to_response
-from myapp.models import book
 from django.db.models import Q
 from myapp.models import Book
 # Create your views here.
 
 def search(request):
+	import pdb; pdb.set_trace()
 	query = request.GET.get('q', '')
 	if query:
 		qset(
@@ -20,4 +20,4 @@ def search(request):
 		{
 			'results': results,
 			'query': query
-		}
+		})
