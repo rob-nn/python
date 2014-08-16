@@ -23,14 +23,15 @@ def checkVulns(banner):
 			
 
 def main():
-	portList = [21]
+	portList = [21, 22]
 	for x in range(1, 255):
+		print x
 		ip = '172.22.0.' + str(x)
 		for port in portList:
 			banner = retBanner(ip, port)
 			if banner:
 				print '[+] ' + ip + ': ' + banner
-				checkVulns(banner)
+				#checkVulns(banner)
 
 if __name__ == '__main__':
 	main()
