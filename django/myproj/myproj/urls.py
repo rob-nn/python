@@ -10,4 +10,5 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^search/$', 'myapp.views.search'),
+    url(r'^contact/$', 'myapp.views.contact'),
 )
