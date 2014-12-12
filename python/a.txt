@@ -1,0 +1,26 @@
+a(ipickling
+A
+p0
+(dp1
+S'bs'
+p2
+(lp3
+(ipickling
+B
+p4
+(dp5
+S'desc'
+p6
+S'obj b1'
+p7
+sba(ipickling
+B
+p8
+(dp9
+g6
+S'obj b2'
+p10
+sbasg6
+S'Obj A'
+p11
+sb.
