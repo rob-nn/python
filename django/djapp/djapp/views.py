@@ -1,10 +1,14 @@
 from django.http import HttpResponse
+from django.template import Context, Template
 import datetime
 
 def current_datetime(request):
-        now = datetime.datetime.now()
-        html= "<html><body>It is now %s.</body></html>" % now
-        return HttpResponse(html)
+    dt = datetime.datetime.now()
+    fl = open('/home/roberto/Documents/python/django/djapp/djapp/mytemplate.html')
+    template = Template(fl.read())
+    fl.close()
+    return HttpResponse(template.render(Context({'current_date': dt})))
+    
 
 def hours_ahead(request, offset):
     offset = int(offset)
