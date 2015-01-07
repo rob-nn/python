@@ -5,10 +5,10 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'myproj.views.home', name='home'),
+    # url(r'^$', 'djapp.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^search/$', 'myapp.views.search'),
-    url(r'^contact/$', 'myapp.views.contact'),
+    url(r'^time/$', 'djapp.views.current_datetime'),
+    url(r'^time/plus/(\d{1,2})/$', 'djapp.views.hours_ahead'),
 )

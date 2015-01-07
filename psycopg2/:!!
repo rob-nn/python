@@ -1,0 +1,12 @@
+import psycopg2
+
+conn = psycopg2. connect(database='my_django', user='appserver', password='appserver', host='192.168.1.2')
+
+cur = conn.cursor()
+
+cur.execute("select * from table_a;")
+reg = cur.fetchone()
+ 
+print(type(reg))
+cur.close()
+conn.close()
